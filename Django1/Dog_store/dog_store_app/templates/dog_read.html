@@ -1,0 +1,32 @@
+{% include 'header.html' %}
+<body> 
+    <div class="container mt-4 mb-5">
+      <h1 class="mb-4">Pet product List</h1>
+      <a href="/add/" class="btn btn-success mb-3">Add products</a>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Product_For</th>
+            <th scope="col">Product_name</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          {% for read in reads %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ read.Product_For }}</td>
+            <td>{{ read.Product_name }}</td>
+            <td>
+                <a href='/edit/{{ read.id }}/' class="btn btn-info">Edit</a>
+                <a href='/delete/{{ read.id }}/' class="btn btn-danger">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    {% include 'footer.html' %}

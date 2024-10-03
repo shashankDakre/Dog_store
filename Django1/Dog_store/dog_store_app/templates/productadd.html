@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .custom-navbar {
+            background-color: black; 
+            color: white; 
+        }
+        .custom-navbar .navbar-brand,
+        .custom-navbar .nav-link {
+            color: #fff; 
+        }
+        .custom-navbar .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        .custom-navbar .nav-link.active,
+        .custom-navbar .nav-link:hover {
+            color: pink; 
+        }   
+        footer a {
+            text-decoration: none; 
+        }
+        
+        footer a:hover {
+            text-decoration: underline; 
+            background-color: black;
+            color: white; 
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">SD Dog Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart/">Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="card col-md-4 p-3 mx-auto mt-5 mb-5">
+        <form action="/add/" method="post">
+            {% csrf_token %} 
+                <div class="mb-3">
+                    <label class="form-label">Product For</label>
+                    <input type="text" name="Product_For" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Product Name</label>
+                    <input type="text" name="Product_name" class="form-control">
+                </div> 
+                <div class="mb-3">
+                    <input type="submit" value="Create" class="btn btn-primary">
+                </div> 
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>About Us</h5>
+                    <p>We are passionate about providing the best products for your furry friends.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">Products</a></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                        <li><a href="/cart/" class="text-white">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#" class="text-white"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <hr class='my-4' style='border-color: rgba(255, 255, 255, 0.5);'>
+            <p>&copy; 2024 Shashank Dog Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts for Font Awesome (for social media icons) -->
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+  </body>
+</html>

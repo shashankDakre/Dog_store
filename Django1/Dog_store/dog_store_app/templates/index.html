@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .hero {
+            background: url('{% static 'pic\photo-1534361960057-19889db9621e.avif' %}') no-repeat center center;
+            background-size: cover;
+            height: 90vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: rights;
+        }
+        .card-img-top {
+            height: 500px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .custom-navbar {
+            background-color: black; /* Set the navbar background color to black */
+            color: white; /* Set the text color to white for better contrast */
+        }
+    
+        .custom-navbar .navbar-brand,
+        .custom-navbar .nav-link {
+            color: #fff; /* Set the color of the navbar brand and links to white */
+        }
+    
+        .custom-navbar .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            /* Change the color of the toggler icon to white */
+        }
+    
+        .custom-navbar .nav-link.active,
+        .custom-navbar .nav-link:hover {
+            color: pink; /* Set the color for active or hovered links */
+        }   
+        footer a {
+            text-decoration: none; /* Remove underline from links */
+        }
+        
+        footer a:hover {
+            text-decoration: underline; /* Underline on hover */
+            background-color: black;
+            color: white; /* Change color on hover for better visibility */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">SD Dog Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/read/">Add Products</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>Welcome to Dog Store!</h1>
+            <p>Your one-stop shop for all things dog.</p>
+            <a href="/cart/" class="btn btn-primary btn-lg">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- Product Section -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Featured Products</h2>
+        <div class="row">
+
+            <!-- Product Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'pic\photo-1714068691256-cd3d65f97795.avif' %}" class="card-img-top" alt="Dog Food">
+                    <div class="card-body">
+                        <h5 class="card-title">Premium Dog Food</h5>
+                        <p class="card-text">INR 49.99</p>
+                        <a href="/cart/" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'pic/premium_photo-1694819488591-a43907d1c5cc.avif' %}" class="card-img-top" alt="Dog Toy">
+                    <div class="card-body">
+                        <h5 class="card-title">Interactive Dog Toy</h5>
+                        <p class="card-text">INR 19.99</p>
+                        <a href="/cart/" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'pic\photo-1503595855261-9418f48a991a.avif' %}" class="card-img-top" alt="Dog Bed">
+                    <div class="card-body">
+                        <h5 class="card-title">Comfortable Dog Bed</h5>
+                        <p class="card-text">INR 89.99</p>
+                        <a href="/cart/" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- End of row -->
+    </div> <!-- End of container -->
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>About Us</h5>
+                <p>We are passionate about providing the best products for your furry friends. Our mission is to ensure every dog has a happy and healthy life.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="#" class="text-white">Products</a></li>
+                    <li><a href="#" class="text-white">About Us</a></li>
+                    <li><a href="#" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Follow Us</h5>
+                <a href="www.facebook.com" class="text-white mr-2"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="www.twitter.com" class="text-white mr-2"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="www.instagram.com" class="text-white"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+        <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.5);">
+        <p>&copy; 2024 Shashank Dog Store. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Scripts for Font Awesome (for social media icons) -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
